@@ -1,10 +1,13 @@
 import "./App.css";
-import Navi from "./layouts/Navi";
+import Dashboard from "./layouts/Dashboard";
+import Container from "@material-ui/core/Container";
 
 function App() {
   return (
     <div className="App">
-     <Navi></Navi>
+      <Container>
+        <Dashboard></Dashboard>
+      </Container>
     </div>
   );
 }
