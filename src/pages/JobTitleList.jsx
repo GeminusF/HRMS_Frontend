@@ -33,7 +33,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function List() {
+export default function JobTitleList() {
   const classes = useStyles();
 
   const [jobtitles, setJobtitles] = useState([]);

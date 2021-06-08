@@ -1,9 +1,10 @@
 import React from "react";
-import List from "./List";
 import Sidebar from "./Sidebar";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Navi from "./Navi";
+import JobTitleList from "../pages/JobTitleList";
+import CandidateList from "../pages/CandidateList";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +29,7 @@ export default function Dashboard() {
           <Sidebar className={classes.paper}></Sidebar>
         </Grid>
         <Grid item xs={9}>
-          <List className={classes.paper}></List>
+          <CandidateList className={classes.paper}></CandidateList>
         </Grid>
       </Grid>
     </div>
