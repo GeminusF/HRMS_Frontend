@@ -14,6 +14,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -83,6 +84,7 @@ export default function Navi() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -175,7 +177,15 @@ export default function Navi() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            <Link
+              href="https://github.com/GeminusF/HRMS_Frontend"
+              title="Repository"
+           
+              target="_blank"
+              color="inherit"
+            >
+              HRMS
+            </Link>
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
