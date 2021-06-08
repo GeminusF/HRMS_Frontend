@@ -6,6 +6,7 @@ import Navi from "./Navi";
 import JobTitleList from "../pages/JobTitleList";
 import CandidateList from "../pages/CandidateList";
 import EmployerList from "../pages/EmployerList";
+import JobVacancyList from "../pages/JobVacancyList";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,7 +31,7 @@ export default function Dashboard() {
           <Sidebar className={classes.paper}></Sidebar>
         </Grid>
         <Grid item xs={9}>
-          <EmployerList className={classes.paper}></EmployerList>
+          <JobVacancyList className={classes.paper}></JobVacancyList>
         </Grid>
       </Grid>
     </div>
