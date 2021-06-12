@@ -1,41 +1,9 @@
 import React, { useState, useEffect } from "react";
 import CandidateService from "../services/candidateService";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-
-const StyledTableCell = withStyles((theme) => ({
-  head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  body: {
-    fontSize: 14,
-  },
-}))(TableCell);
-
-const StyledTableRow = withStyles((theme) => ({
-  root: {
-    "&:nth-of-type(odd)": {
-      backgroundColor: theme.palette.action.hover,
-    },
-  },
-}))(TableRow);
-
-const useStyles = makeStyles({
-  table: {
-    minWidth: 700,
-  },
-});
+import { Card, Image } from "semantic-ui-react";
 
 export default function CandidateList() {
   const [candidates, setCandidates] = useState([]);
-  const classes = useStyles();
 
   useEffect(() => {
     let candidateService = new CandidateService();
@@ -45,33 +13,29 @@ export default function CandidateList() {
   }, []);
 
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell align="right">Id</StyledTableCell>
-            <StyledTableCell align="right">E-Mail</StyledTableCell>
-            <StyledTableCell align="right">Ad</StyledTableCell>
-            <StyledTableCell align="right">Soyad</StyledTableCell>
-            <StyledTableCell align="right">İdentifikasiya nömrəsi</StyledTableCell>
-            <StyledTableCell align="right">Doğum günü</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {candidates.map((candidate) => (
-            <StyledTableRow key={candidate.id}>
-              <StyledTableCell component="th" scope="row">
-                {candidate.id}
-              </StyledTableCell>
-              <StyledTableCell align="right">{candidate.emailAddress}</StyledTableCell>
-              <StyledTableCell align="right">{candidate.firstName}</StyledTableCell>
-              <StyledTableCell align="right">{candidate.lastName}</StyledTableCell>
-              <StyledTableCell align="right">{candidate.identificationNumber}</StyledTableCell>
-              <StyledTableCell align="right">{candidate.birthDate}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <Card.Group>
+      {candidates.map((candidate) => (
+        <Card href="#candidate-detail">
+          {" "}
+          <Image
+            src="https://cdn.icon-icons.com/icons2/1674/PNG/512/person_110935.png"
+            size="tiny"
+            wrapped
+            ui={false}
+          />
+          <Card.Content key={candidate.id}>
+            <Card.Header>
+              {candidate.firstName} {candidate.lastName}
+            </Card.Header>
+            <Card.Meta>
+              <span className="date">{candidate.birthDate}</span>
+            </Card.Meta>
+            <Card.Description>
+              {candidate.emailAddress} {candidate.identificationNumber}
+            </Card.Description>
+          </Card.Content>
+        </Card>
+      ))}
+    </Card.Group>
   );
 }
