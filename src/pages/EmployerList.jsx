@@ -1,40 +1,8 @@
 import React, { useState, useEffect } from "react";
 import EmployerService from "../services/employerService";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-
-const StyledTableCell = withStyles((theme) => ({
-  head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  body: {
-    fontSize: 14,
-  },
-}))(TableCell);
-
-const StyledTableRow = withStyles((theme) => ({
-  root: {
-    "&:nth-of-type(odd)": {
-      backgroundColor: theme.palette.action.hover,
-    },
-  },
-}))(TableRow);
-
-const useStyles = makeStyles({
-  table: {
-    minWidth: 700,
-  },
-});
+import { Table } from "semantic-ui-react";
 
 export default function EmployerList() {
-  const classes = useStyles();
   const [employers, setEmployers] = useState([]);
 
   useEffect(() => {
@@ -45,35 +13,31 @@ export default function EmployerList() {
   }, []);
 
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell align="right">Id</StyledTableCell>
-            <StyledTableCell align="right">E-Mail</StyledTableCell>
-            <StyledTableCell align="right">Korporasiya</StyledTableCell>
-            <StyledTableCell align="right">Veb Sayt</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {employers.map((employer) => (
-            <StyledTableRow key={employer.id}>
-              <StyledTableCell component="th" scope="row">
-                {employer.id}
-              </StyledTableCell>
-              <StyledTableCell align="right">
-                {employer.emailAddress}
-              </StyledTableCell>
-              <StyledTableCell align="right">
-                {employer.companyName}
-              </StyledTableCell>
-              <StyledTableCell align="right">
+    <Table definition>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell />
+          <Table.HeaderCell>Internet Səhifəsi</Table.HeaderCell>
+          <Table.HeaderCell >E-mail</Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+      {employers.map((employer) => (
+        <Table.Body key={employer.id}>
+          <Table.Row>
+            <Table.Cell>{employer.companyName}</Table.Cell>
+            <Table.Cell >
+              <a href="" target="_blank">
                 {employer.webAddress}
-              </StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+              </a>
+            </Table.Cell>
+            <Table.Cell>
+              <a href="" target="_blank">
+                {employer.emailAddress}
+              </a>
+            </Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      ))}
+    </Table>
   );
 }
