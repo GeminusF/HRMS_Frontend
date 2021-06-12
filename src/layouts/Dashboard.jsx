@@ -12,11 +12,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  },
 }));
 
 export default function Dashboard() {
@@ -25,13 +20,13 @@ export default function Dashboard() {
     <div className={classes.root}>
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Navi className={classes.paper}></Navi>
+          <Navi></Navi>
         </Grid>
-        <Grid item xs={3}>
-          <Sidebar className={classes.paper}></Sidebar>
+        <Grid item xs={2.4}>
+          <Sidebar></Sidebar>
         </Grid>
         <Grid item xs={9}>
-          <JobVacancyList className={classes.paper}></JobVacancyList>
+          <EmployerList></EmployerList>
         </Grid>
       </Grid>
     </div>
