@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,17 +67,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
 
 # HRMS
-Visualized by MATERIAL-UI
+Visualized by Semantic UI React
 
 ## Visuals
-
-![image](https://user-images.githubusercontent.com/78738210/121096810-f4a76400-c803-11eb-9f27-7c2b4ca2fa6d.png)
-![image](https://user-images.githubusercontent.com/78738210/121209599-05032180-c88c-11eb-9e69-40a731fd2c2d.png)
-![image](https://user-images.githubusercontent.com/78738210/121211143-4d6f0f00-c88d-11eb-9a39-58dc8c20b8ce.png)
-![image](https://user-images.githubusercontent.com/78738210/121214395-249c4900-c890-11eb-9ff6-5012da6b9a00.png)
+![image](https://user-images.githubusercontent.com/78738210/121789942-770c9b00-cbeb-11eb-9683-b51bd8cb8877.png)
+![image](https://user-images.githubusercontent.com/78738210/121789956-93103c80-cbeb-11eb-986d-8370a56605e1.png)
+![image](https://user-images.githubusercontent.com/78738210/121789978-c81c8f00-cbeb-11eb-902c-f2f1b64f291b.png)
+![image](https://user-images.githubusercontent.com/78738210/121789992-e2566d00-cbeb-11eb-8bf4-6dccac5c22e2.png)
 
 
 
