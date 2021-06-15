@@ -17,6 +17,8 @@ export default function JobVacancyList() {
         <Table.Row>
           <Table.HeaderCell singleLine>Vəzifə</Table.HeaderCell>
           <Table.HeaderCell>İş açıqlaması</Table.HeaderCell>
+          <Table.HeaderCell>İş növü</Table.HeaderCell>
+          <Table.HeaderCell>İş zamanı</Table.HeaderCell>
           <Table.HeaderCell>Açıq yerlərin sayı</Table.HeaderCell>
           <Table.HeaderCell>Korporasiya</Table.HeaderCell>
           <Table.HeaderCell>Şəhər</Table.HeaderCell>
@@ -34,6 +36,8 @@ export default function JobVacancyList() {
               </Header>
             </Table.Cell>
             <Table.Cell singleLine>{jobvacancy.jobDescription}</Table.Cell>
+            <Table.Cell singleLine>{jobvacancy.jobType}</Table.Cell>
+            <Table.Cell singleLine>{jobvacancy.jobTime}</Table.Cell>
             <Table.Cell>{jobvacancy.openPositionNumber}</Table.Cell>
             <Table.Cell textAlign="right">
               <a href="#">{jobvacancy.companyName}</a>
