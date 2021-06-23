@@ -1,12 +1,11 @@
 import React from "react";
-import { useFormik } from 'formik';
 import JobVacancyForm from "../pages/JobVacancyForm";
-
+import { NavLink } from "react-router-dom";
 
 export default function Add() {
   return (
     <div>
-      <JobVacancyForm></JobVacancyForm>
+      <JobVacancyForm as={NavLink} to="/add/jobvacany"></JobVacancyForm>
     </div>
   );
 }
