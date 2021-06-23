@@ -1,6 +1,6 @@
 import React from "react";
-import Sidebar from "./Sidebar";
-import { Grid } from "semantic-ui-react";
+import Sidemenu from "./Sidemenu";
+import { Grid, Checkbox, Menu, Sidebar } from "semantic-ui-react";
 import JobTitleList from "../pages/JobTitleList";
 import CandidateList from "../pages/CandidateList";
 import EmployerList from "../pages/EmployerList";
@@ -10,13 +10,32 @@ import { Route } from "react-router";
 import HomePage from "../pages/HomePage";
 
 export default function Dashboard() {
+  const [visible, setVisible] = React.useState(false);
   return (
     <Grid>
+      <Grid.Column>
+        <Checkbox
+          checked={visible}
+          label={{ children: <code>visible</code> }}
+          onChange={(e, data) => setVisible(data.checked)}
+        />
+      </Grid.Column>
+
+      <Sidebar
+        as={Menu}
+        animation="overlay"
+        direction="left"
+        icon="labeled"
+        inverted
+        onHide={() => setVisible(false)}
+        vertical
+        visible={visible}
+        width="thin"
+      >
+        <Sidemenu></Sidemenu>
+      </Sidebar>
       <Grid.Row>
-        <Grid.Column width={3}>
-          <Sidebar></Sidebar>
-        </Grid.Column>
-        <Grid.Column width={13}>
+        <Grid.Column width={16}>
           <Route exact path="/" component={HomePage}></Route>
           <Route path="/candidates" component={CandidateList}></Route>
           <Route path="/employers" component={EmployerList}></Route>
