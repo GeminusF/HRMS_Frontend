@@ -17,7 +17,9 @@ export default function Navi() {
         />
       </Link>
 
-      <Menu.Item name="haqqımızda" icon="info circular inverted teal" />
+      <Link as={NavLink} to="/aboutus">
+        <Menu.Item name="haqqımızda" icon="info circular inverted teal" />
+      </Link>
 
       <Menu.Menu position="right">
         <Dropdown item text="Dil">

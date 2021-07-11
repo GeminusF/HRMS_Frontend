@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 export default function HomePage() {
-    return (
-        <div>
-            Figma design will be
-        </div>
-    )
+  return (
+   <div>Coming Soon</div>
+  );
 }
