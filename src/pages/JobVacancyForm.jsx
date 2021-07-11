@@ -10,41 +10,27 @@ import {
   Icon,
 } from "semantic-ui-react";
 
-// const jobType = [
-//   { key: "o", text: "Ofisdən", value: "office" },
-//   { key: "r", text: "Uzaqdan", value: "remote" },
-// ];
-
-// const jobTime = [
-//   { key: "pt", text: "Yarımştat", value: "part time" },
-//   { key: "ft", text: "Tam vaxt", value: "full time" },
-// ];
-
 const VacancySchema = Yup.object().shape({
   jobPosition: Yup.string()
-    // .min(5, "Çox qısadı")
-    // .max(50, "Çox uzundu")
+    .min(5, "Çox qısadı")
+    .max(50, "Çox uzundu")
     .required("Tələb olunur"),
   jobDescription: Yup.string()
-    // .min(10, "Çox qısadı")
-    // .max(500, "Çox uzundu")
+    .min(10, "Çox qısadı")
+    .max(5000, "Çox uzundu")
     .required("Tələb olunur"),
   cityInfo: Yup.string()
-    // .min(4, "Çox qısadı")
-    // .max(50, "Çox uzundu")
+    .min(4, "Çox qısadı")
+    .max(500, "Çox uzundu")
     .required("Tələb olunur"),
   salaryMin: Yup.number().required("Tələb olunur"),
   salaryMax: Yup.number().required("Tələb olunur"),
   openPositionNumber: Yup.number()
-    // .min(4, "Çox qısadı")
-    // .max(50, "Çox uzundu")
+    .min(1, "Ən azı bir yer açmalısınız")
     .required("Tələb olunur"),
-  releaseDate: Yup.string().required("Tələb olunur"),
-  applicationDeadline: Yup.string().required("Tələb olunur"),
-  companyName: Yup.string()
-    // .min(5, "Çox qısadı")
-    // .max(50, "Çox uzundu")
-    .required("Tələb olunur"),
+  releaseDate: Yup.date().required("Tələb olunur"),
+  applicationDeadline: Yup.date().required("Tələb olunur"),
+  companyName: Yup.string().required("Tələb olunur"),
 });
 
 export default function JobVacancyForm() {
